@@ -1,6 +1,4 @@
-# Blogiz-Starter-Pack
-
-## Installation:
+# Blogiz-typenext
 
 1. Clone the repository.
 2. Install dependencies using `npm install`.
