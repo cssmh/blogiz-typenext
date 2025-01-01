@@ -1,9 +1,10 @@
+import { Blog } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { AiFillLike } from "react-icons/ai";
 import { FaCalendar } from "react-icons/fa";
 
-const LatestBlogCard = ({ blog }) => {
+const LatestBlogCard = ({ blog }: { blog: Blog }) => {
   return (
     <div key={blog.id} className="card w-full bg-base-100 shadow-xl">
       <figure>
@@ -31,9 +32,9 @@ const LatestBlogCard = ({ blog }) => {
         </p>
         <div className="flex justify-between items-center mt-5">
           <div className="avatar items-center">
-            <div className="w-8 mr-1 rounded-full">
+            <div className="w-8 mr-2 rounded-full">
               <Image
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                src="https://i.ibb.co.com/2qG9k3c/meherun.jpg"
                 width={100}
                 height={100}
                 alt="author image"
@@ -41,7 +42,6 @@ const LatestBlogCard = ({ blog }) => {
             </div>
             <span>{blog.author_name}</span>
           </div>
-
           <div className="flex items-center">
             <AiFillLike className="text-accent text-xl" /> {blog.total_likes}{" "}
             Likes

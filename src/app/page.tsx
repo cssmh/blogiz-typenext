@@ -1,7 +1,13 @@
+import LatestBlogs from "@/components/LatestBlogs";
+
 const HomePage = async () => {
+  const res = await fetch("http://localhost:5000/blogs", {
+    cache: "no-cache",
+  });
+  const blogs = await res.json();
   return (
     <>
-      <h1 className="text-center text-4xl my-5">Latest Blogs</h1>
+      <LatestBlogs blogs={blogs} />
     </>
   );
 };

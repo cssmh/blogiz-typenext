@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import brandLogo from "@/assets/logo.png";
+import brandLogo from "@/assets/logo.jpg";
 
 const Navbar = () => {
   return (
