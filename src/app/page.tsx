@@ -2,7 +2,9 @@ import LatestBlogs from "@/components/LatestBlogs";
 
 const HomePage = async () => {
   const res = await fetch("http://localhost:5000/blogs", {
-    cache: "no-cache",
+    next: {
+      revalidate: 30,
+    },
   });
   const blogs = await res.json();
   return (
