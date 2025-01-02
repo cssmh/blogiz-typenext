@@ -12,7 +12,7 @@ type FormValues = {
   total_likes: string;
 };
 
-const CreateBlogForm = () => {
+const BlogForm = () => {
   const {
     register,
     handleSubmit,
@@ -20,7 +20,10 @@ const CreateBlogForm = () => {
   } = useForm<FormValues>();
 
   const onSubmit = async (data: FormValues) => {
-    console.log(data);
+    const res = await fetch("http://localhost:5000/blogs");
+    const blogs = await res.json();
+    data.id = JSON.stringify(blogs.length + 1);
+    data.total_likes = "200";
   };
 
   return (
@@ -102,4 +105,4 @@ const CreateBlogForm = () => {
   );
 };
 
-export default CreateBlogForm;
+export default BlogForm;
