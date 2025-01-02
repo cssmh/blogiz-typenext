@@ -1,5 +1,6 @@
 "use client";
 
+import { createBlog } from "@/actions/createBlog";
 import { useForm } from "react-hook-form";
 
 type FormValues = {
@@ -24,6 +25,13 @@ const BlogForm = () => {
     const blogs = await res.json();
     data.id = JSON.stringify(blogs.length + 1);
     data.total_likes = "200";
+    try {
+      const res = await createBlog(data);
+      console.log(res);
+    } catch (error: any) {
+      console.log(error.message);
+      throw new Error(error.message);
+    }
   };
 
   return (
